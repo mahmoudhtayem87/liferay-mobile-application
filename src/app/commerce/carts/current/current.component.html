@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cart Items</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list class="ion-margin" *ngIf="items">
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="liferayService.fixCommerceImageUrl(item.thumbnail)"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        {{item.name}}
+      </ion-label>
+      <ion-text slot="end">
+        <ion-item>
+          {{item.price.finalPriceFormatted}}
+        </ion-item>
+        <ion-item>
+          Quantity: {{item.quantity}}
+        </ion-item>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title slot="start">
+      {{total}}
+    </ion-title>
+    <ion-buttons slot="end" >
+      <ion-button>
+        <ion-icon color="success" slot="icon-only" name="bag-check-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

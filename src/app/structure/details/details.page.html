@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{article.title}}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button *ngIf="hasDeletePermission">
+        <ion-icon color="danger" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-select placeholder="Select View" (ionChange)="selectTemplate($event)">
+        <ion-select-option
+          *ngFor="let template of templates" value="{{template.contentTemplateId}}">
+          {{template.contentTemplateName}}
+        </ion-select-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngIf="!isTemplateSelected" class="ion-padding ion-margin">
+    <ion-card-content>
+      Please select a template to view this article.
+    </ion-card-content>
+  </ion-card>
+  <ion-content class="ion-margin" [innerHTML]="innerHTML | safeHtml">
+
+  </ion-content>
+</ion-content>

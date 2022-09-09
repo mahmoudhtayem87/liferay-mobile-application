@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Liferay Mobile Application</string>
+    <string name="title_activity_main">Liferay Mobile Application</string>
+    <string name="package_name">com.liferay.demo.mobile</string>
+    <string name="custom_url_scheme">com.liferay.demo.mobile</string>
+</resources>

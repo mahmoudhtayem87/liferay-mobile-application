@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="currentFolder != null">{{folderTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row >
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let folder of folders; index as i">
+        <ion-card class="dashboard-item ion-justify-content-evenly" (click)="viewFolder(folder)">
+          <div class="card-icon">
+            <img class="ion-align-self-center" src="./assets/images/folder.png">
+          </div>
+          <ion-card-header class="ion-text-center card-title-min-height">{{folder.name}}</ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let file of files; index as i">
+        <ion-card class="dashboard-item ion-justify-content-evenly" (click)="viewFile(file)">
+          <div class="card-icon">
+            <img class="ion-align-self-center" src="./assets/images/file.png">
+          </div>
+          <ion-card-header class="ion-text-center card-title-min-height elips">{{file.title}}</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Open Carts</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list class="ion-margin" *ngIf="carts">
+    <ion-item *ngFor="let cart of carts" (click)="view(cart)" button>
+      <ion-label>
+        Cart Id: {{cart.id}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="dashboard-item ion-justify-content-evenly" (click)="visit('/structures')">
+          <div class="card-icon">
+            <img class="ion-align-self-center" src="./assets/images/icons/content.png">
+          </div>
+          <ion-card-header class="ion-text-center card-title-min-height" >Content</ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="dashboard-item ion-justify-content-evenly" (click)="visit('forms/list')">
+          <div class="card-icon">
+            <img  src="./assets/images/icons/forms.png">
+          </div>
+          <ion-card-header class="ion-text-center card-title-min-height">Forms</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card class="dashboard-item ion-justify-content-evenly" (click)="visit('documents/root')">
+          <div class="card-icon">
+            <img src="./assets/images/icons/documents.png">
+          </div>
+          <ion-card-header class="ion-text-center card-title-min-height">Documents and Media</ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="dashboard-item ion-justify-content-center">
+          <div class="card-icon">
+            <img class="ion-align-self-center" src="./assets/images/icons/blogs.png">
+          </div>
+          <ion-card-header class="ion-text-center card-title-min-height">Blogs</ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

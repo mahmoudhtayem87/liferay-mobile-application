@@ -1,0 +1,41 @@
+<ion-header *ngIf="productObj != null">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{productObj.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="productObj!= null">
+  <div class="ion-padding"  style="width: 100%;overflow: scroll">
+    <ion-img  [src]="filePreview" (ionError)="didNotLoad()">
+    </ion-img>
+  </div>
+  <div class="ion-padding">
+    <ion-text [innerHTML]="productObj.description">
+
+    </ion-text>
+  </div>
+
+</ion-content>
+<ion-footer *ngIf="productObj!= null && accountId != -1 && cartId != -1">
+  <ion-toolbar >
+    <ion-buttons slot="start" *ngIf="productSKUs !== null">
+      <ion-select [(ngModel)]="skuid" placeholder="Select SKU" (ionChange)="skuSelected($event)">
+        <ion-select-option value="{{sku.id}}" *ngFor="let sku of productSKUs.items">{{sku.sku}}</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+    <ion-title>
+      {{price}}
+    </ion-title>
+    <ion-buttons slot="end" *ngIf="productSKUs !== null">
+      <ion-button>
+        <ion-icon slot="icon-only" name="flag-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="addToCart()"  *ngIf="skuid!= -1">
+        <ion-icon slot="icon-only"   name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+<commerce-accounts *ngIf="accountId === -1 || cartId === -1"></commerce-accounts>

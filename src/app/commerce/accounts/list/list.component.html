@@ -1,0 +1,18 @@
+
+
+<ion-footer>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-icon name="people-circle-outline" size="large">  </ion-icon>
+      <ion-select [(ngModel)]="selectedAccountId" placeholder="Select Account" (ionChange)="accountSelected($event)">
+        <ion-select-option [value]="account.id" *ngFor="let account of items">{{account.name}}</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="people-circle-outline" size="large">  </ion-icon>
+      <ion-select [(ngModel)]="selectedCartId" placeholder="Select Cart" (ionChange)="cartSelected($event)">
+        <ion-select-option [value]="cart.id" *ngFor="let cart of carts.items">{{cart.id}}</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

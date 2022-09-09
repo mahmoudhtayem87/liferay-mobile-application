@@ -1,20 +1,55 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div style="margin-top:auto!important;margin-bottom: auto!important;display: block">
+    <img style="margin:auto!important;display: flex" width="90" src="./assets/images/logos/liferay.png"/>
+    <h1 class=" ion-text-center custom-header">
+      Liferay Mobile App
+    </h1>
+    <h2 class="ion-text-capitalize ion-text-center custom-sub-header">
+      setup
+    </h2>
+    <form [formGroup]="ionicForm" (ngSubmit)="start()" class="ion-padding">
+      <ion-item>
+        <ion-label position="floating">Portal URL
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.url.errors?.required">
+            <ion-icon name="medical"></ion-icon> <!--filled-->
+          </span>
+        </ion-label>
+        <ion-input formControlName="url" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">User Name
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.username.errors?.required">
+             <ion-icon name="medical"></ion-icon>
+        </span>
+        </ion-label>
+        <ion-input formControlName="username" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+           <ion-icon name="medical"></ion-icon>
+        </span></ion-label>
+        <ion-input formControlName="password" type="password" required></ion-input>
+      </ion-item>
+      <ion-grid class="ion-margin-top ion-padding-top">
+        <ion-row>
+          <ion-col size="3">
+            <ion-button type="submit" class="ion-float-start" expand="full" shape="round" color="success">
+              Start
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+          </ion-col>
+          <ion-col size="3">
+            <ion-button class="ion-float-end" expand="full" shape="round" color="danger">
+              Clear
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
   </div>
-</ion-content>
+
+
+
+

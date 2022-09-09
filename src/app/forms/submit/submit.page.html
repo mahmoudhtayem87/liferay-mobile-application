@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text *ngIf="currentForm!=null">{{currentForm.name}}</ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(model)" *ngIf="currentForm!=null" class="ion-padding">
+    <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+  </form>
+</ion-content>
+<ion-footer *ngIf="currentForm!=null">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-padding">
+      <ion-icon slot="icon-only" color="secondary" name="reload" type="button" (click)="clear()"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end" class="ion-padding">
+      <ion-icon slot="icon-only" color="primary" name="send" type="button" (click)="onSubmit(model)"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

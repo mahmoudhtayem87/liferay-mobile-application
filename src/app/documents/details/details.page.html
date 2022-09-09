@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="currentFile!= null">{{currentFile["title"]}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding" *ngIf="currentFile!= null" style="width: 100%;overflow: scroll">
+    <ion-img  [src]="filePreview" (ionError)="didNotLoad()">
+    </ion-img>
+  </div>
+  <ion-list *ngIf="currentFile!= null" class="ion-margin">
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-icon size="large" name="person-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>Content Author</h2>
+        <h3>{{this.currentFile["creator"]["name"]}}</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-icon size="large" name="calendar-outline"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>Created Date</h2>
+        <h3>{{this.currentFile["dateCreated"]}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
