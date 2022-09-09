@@ -1,0 +1,7 @@
+{
+  "name": "Liferay Mobile Application",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
