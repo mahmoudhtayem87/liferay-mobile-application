@@ -9,8 +9,7 @@
 
 <ion-content>
   <div class="ion-padding" *ngIf="currentFile!= null" style="width: 100%;overflow: scroll">
-    <ion-img  [src]="filePreview" (ionError)="didNotLoad()">
-    </ion-img>
+    <img  [src]="filePreview | secure | async" />
   </div>
   <ion-list *ngIf="currentFile!= null" class="ion-margin">
     <ion-item>

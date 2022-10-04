@@ -53,19 +53,23 @@ const routes: Routes = [
   },
   {
     path: 'forms/list',
-    loadChildren: () => import('./forms/list/list.module').then( m => m.ListPageModule)
+    loadChildren: () => import('./forms/list/list.module').then( m => m.ListPageModule),
+    canActivate:[AuthenticationGuard]
   },
   {
     path: 'forms/submit/:formId',
-    loadChildren: () => import('./forms/submit/submit.module').then( m => m.SubmitPageModule)
+    loadChildren: () => import('./forms/submit/submit.module').then( m => m.SubmitPageModule),
+    canActivate:[AuthenticationGuard]
   },
   {
     path: 'commerce',
-    loadChildren: () => import('./commerce/commerce.module').then( m => m.CommerceModule)
+    loadChildren: () => import('./commerce/commerce.module').then( m => m.CommerceModule),
+    canActivate:[AuthenticationGuard]
   },
   {
     path: 'router',
-    loadChildren: () => import('./router/router.module').then( m => m.RouterPageModule)
+    loadChildren: () => import('./router/router.module').then( m => m.RouterPageModule),
+    canActivate:[AuthenticationGuard]
   }
 ];
 

@@ -11,16 +11,18 @@ import {ProductComponent} from "./product/product.component";
 import {AccountsListComponent} from "./accounts/list/list.component";
 import {ListCartComponent} from "./carts/list/list.component";
 import {CurrentCartComponent} from "./carts/current/current.component";
+import {SecureImagePipe} from "../secure-image.pipe";
+
 
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CommerceRoutingModule
-  ],
-  declarations: [HomeComponent,ListComponent,ProductComponent,AccountsListComponent,ListCartComponent,CurrentCartComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        CommerceRoutingModule
+    ],
+  declarations: [HomeComponent,ListComponent,ProductComponent,AccountsListComponent,ListCartComponent,CurrentCartComponent,SecureImagePipe]
 })
 export class CommerceModule {}

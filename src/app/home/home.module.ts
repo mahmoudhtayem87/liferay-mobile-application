@@ -15,6 +15,6 @@ import {EmptyComponent} from '../shared/empty/empty.component';
     HomePageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [HomePage,EmptyComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

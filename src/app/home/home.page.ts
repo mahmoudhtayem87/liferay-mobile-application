@@ -28,9 +28,9 @@ export class HomePage {
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
-    this.ionicForm.controls.url.setValue("http://localhost:8080") ;
-    this.ionicForm.controls.username.setValue("mahmoud.tayem@liferay.com") ;
-    this.ionicForm.controls.password.setValue ("test123") ;
+    this.ionicForm.controls.url.setValue("https://webserver-lctrobotics74-prd.lfr.cloud") ;
+    this.ionicForm.controls.username.setValue("test@liferaybotics.com") ;
+    this.ionicForm.controls.password.setValue ("Gloria1234!") ;
   }
   get errorControl() {
     return this.ionicForm.controls;

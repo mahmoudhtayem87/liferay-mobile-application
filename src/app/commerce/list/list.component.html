@@ -18,7 +18,7 @@
         <ion-card class="dashboard-item ion-justify-content-evenly" >
 
           <div class="product-image">
-            <img alt="Silhouette of mountains" class="product-image" src="{{getImageUrl(item.urlImage) }}" />
+            <img alt="Silhouette of mountains" class="product-image" [src]="getImageUrl(item.urlImage)" />
           </div>
           <ion-card-header class="ion-text-center card-title-min-height bg-primary">{{item.name}}</ion-card-header>
           <!--<ion-card-content [innerHTML]="item.description">

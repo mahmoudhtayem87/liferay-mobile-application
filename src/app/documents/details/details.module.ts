@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DetailsPageRoutingModule } from './details-routing.module';
 
 import { DetailsPage } from './details.page';
-import {EmptyComponent} from '../../shared/empty/empty.component';
+import {SecureImagePipe} from "../../secure-image.pipe";
 
 @NgModule({
   imports: [
@@ -16,6 +16,6 @@ import {EmptyComponent} from '../../shared/empty/empty.component';
     IonicModule,
     DetailsPageRoutingModule
   ],
-  declarations: [DetailsPage,EmptyComponent]
+  declarations: [DetailsPage,SecureImagePipe]
 })
 export class DetailsPageModule {}

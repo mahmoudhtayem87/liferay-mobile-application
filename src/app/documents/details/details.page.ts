@@ -43,6 +43,7 @@ export class DetailsPage implements OnInit {
       return `${LiferayService.portalInformation.url}/${this.currentFile["contentUrl"]}&previewFileIndex=1`;
     }else
     {
+      console.log(this.currentFile);
       return `${LiferayService.portalInformation.url}/${this.currentFile["contentUrl"]}`;
     }
   }
