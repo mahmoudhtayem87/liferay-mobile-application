@@ -16,7 +16,7 @@ export class FormsListPage implements OnInit {
   async showLoading() {
     this.loading = await this.loadingController.create({
       id:"loading",
-      message:"Loading articles..."
+      message:"Loading forms..."
     });
     this.loading.present();
   }
