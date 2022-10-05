@@ -1,64 +1,71 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {AuthenticationGuard} from "./authentication.guard";
+import {ListPage} from "./dxp/structure/list/list.page";
+import {StructuresPage} from "./dxp/structure/structures/structures.page";
+import {ArticleDetailsPage} from "./dxp/structure/details/details.page";
+import {SitesPage} from "./dxp/sites/sites.page";
+import {DashboardPage} from "./dxp/dashboard/dashboard.page";
+import {LoginPage} from "./login/login.page";
+import {RootPage} from "./dxp/documents/root/root.page";
+import {SubfolderPage} from "./dxp/documents/subfolder/subfolder.page";
+import {FileDetailsPage} from "./dxp/documents/details/details.page";
+import {FormsListPage} from "./dxp/forms/list/list.page";
+import {FormsSubmitPage} from "./dxp/forms/submit/submit.page";
+import {ProductsRouterPage} from "./router/router.page";
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    component:LoginPage
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule),
+    component:DashboardPage,
     canActivate:[AuthenticationGuard]
   },
   {
-    path: 'topicList/:structureId',
-    loadChildren: () => import('./structure/list/list.module').then( m => m.ListPageModule),
+    path: 'webcontent/topicList/:structureId',
+    component:ListPage,
     canActivate:[AuthenticationGuard]
   },
   {
-    path: 'details/:articleId',
-    loadChildren: () => import('./structure/details/details.module').then( m => m.DetailsPageModule),
+    path: 'webcontent/article/:articleId',
+    component:ArticleDetailsPage,
+    canActivate:[AuthenticationGuard]
+  },
+  {
+    path: 'webcontent/structures',
+    component:StructuresPage,
     canActivate:[AuthenticationGuard]
   },
   {
     path: 'sites',
-    loadChildren: () => import('./sites/sites.module').then( m => m.SitesPageModule),
-    canActivate:[AuthenticationGuard]
-  },
-  {
-    path: 'structures',
-    loadChildren: () => import('./structure/structures/structures.module').then( m => m.StructuresPageModule),
+    component:SitesPage,
     canActivate:[AuthenticationGuard]
   },
   {
     path: 'documents/root',
-    loadChildren: () => import('./documents/root/root.module').then( m => m.RootPageModule),
+    component:RootPage,
     canActivate:[AuthenticationGuard]
   },
   {
     path: 'documents/subfolder/:folderId',
-    loadChildren: () => import('./documents/subfolder/subfolder.module').then( m => m.SubfolderPageModule),
+    component:SubfolderPage,
     canActivate:[AuthenticationGuard]
   },
   {
     path: 'documents/details/:fileId',
-    loadChildren: () => import('./documents/details/details.module').then( m => m.DetailsPageModule),
+   component:FileDetailsPage,
     canActivate:[AuthenticationGuard]
   },
   {
     path: 'forms/list',
-    loadChildren: () => import('./forms/list/list.module').then( m => m.ListPageModule),
+    component:FormsListPage,
     canActivate:[AuthenticationGuard]
   },
   {
     path: 'forms/submit/:formId',
-    loadChildren: () => import('./forms/submit/submit.module').then( m => m.SubmitPageModule),
+    component:FormsSubmitPage,
     canActivate:[AuthenticationGuard]
   },
   {
@@ -68,8 +75,12 @@ const routes: Routes = [
   },
   {
     path: 'router',
-    loadChildren: () => import('./router/router.module').then( m => m.RouterPageModule),
+    component:ProductsRouterPage,
     canActivate:[AuthenticationGuard]
+  },{
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 
